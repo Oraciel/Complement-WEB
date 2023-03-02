@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TD1 - Exercice 1</title>
+    <meta name="author" content="Dacheville Vincent">
+    <meta name="description" content="TD 1 de la ressource R410">
+    <meta name="keywords" content="HTML, JavaScript, programmation">
+    <link rel="stylesheet" href="../css/td1.css">
+    <script defer="defer" src="../js/td1.js"></script>
+</head>
+<body onload="onLoad();">
+    <h1 id="title" class="firstOrLast">Balise h1 numéro 1</h1>
+    <h2>Balise h2 numéro 1</h2>
+    <h2 class="firstOrLast">Balise h2 numéro 2</h2>
+    <h3 class="firstOrLast">Balise h3 numéro 1</h3>
+    <h3>Balise h3 numéro 2</h3>
+    <h3>Balise h3 numéro 3</h3>
+    <div>
+        <p>Le meilleur manga est évidemment <span>One Piece</span>.</p>
+    </div>
+    <div>
+        <p>Le texte au dessus dit vrai.</p>
+    </div>
+
+    <div id="update-date"></div>
+
+    <p id="days-remaining">Il reste xxx jours avant le 19 juillet 202X</p>
+
+    <p id="clock"> </p>
+
+    <form>
+        <input type="text" id="input" class="white" placeholder="Entrez votre texte ici">
+    </form>
+
+    <div class="menus">
+
+        <div class="menu">
+            <aside class="asideAlone"><img src="../assets/images/plus.gif"> Information Generales</aside>
+            <ul>
+                <li>Accueil</li>
+                <li>CV</li>
+            </ul>
+        </div>
+
+        <div class="menu">
+            <aside class="asideAlone"> <img src="../assets/images/plus.gif"> Recherche</aside>
+            <ul>
+                <li>Activités</li>
+                <li>Rayonnement Scientifique</li>
+                <li>Projets en cours</li>
+                <li>Anciens projets</li>
+                <li>Publications</li>
+            </ul>
+        </div>
+
+        <div class="menu">
+            <aside id="enseignement" class="asideAlone"> <img src="../assets/images/plus.gif"> Enseignement</aside>
+            <ul>
+                <li>Département Informatique</li>
+                <li>LP SIL</li>
+                <li>Polytech Nice-Sophia</li>
+                <li>Autres</li>
+                <li>Stages et Projets</li>
+            </ul>
+        </div>
+
+        <div class="menu">
+            <aside class="asideAlone"> <img src="../assets/images/plus.gif"> Personnel</aside>
+            <ul>
+                <li>Infos</li>
+                <li>Portfolio</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="search">
+        <input type="text" id="search" class="white" placeholder="Rechercher">
+        <button type="button" onclick="search()" id="search-button">Rechercher</button>
+    </div>
+</body>
+</html>

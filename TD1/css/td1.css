@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+
+#clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clock p {
+    margin: 10px;
+}
+
+.white {
+    background-color: rgb(255,255,255);
+}
+
+.green {
+    background-color: rgb(150,255,150);
+}
+
+.red {
+    background-color: rgb(255,150,150);
+}
+
+.menus{
+    background-color: cyan;
+    width: 190px;
+}
+
+.menu li {
+    list-style-type: none;
+    display: none;
+    text-decoration: underline;
+    color: white;
+}
+
+.menu .aside {
+    background-color: blue;
+    color: white;
+    border-radius: 10px 10px 0% 0%;
+    padding-left: 5px;
+}
+
+.menu .asideAlone {
+    background-color: blue;
+    color: white;
+    border-radius: 10px 10px 10px 10px;
+    padding-left: 5px;
+}
+
+.menu ul{
+    margin: 0;
+    padding-left: 10px;
+    background-color: black;
+    border-radius: 0% 0% 10px 10px ;
+}
+
+#enseignement {
+    text-decoration: underline;
+}
+
+.menu{
+    margin-top: 50px;
+    padding-left: 7px;
+    display: flex;
+    flex-direction: column;
+    width: 175px;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+#search {
+    margin-top: 25px;
+}
