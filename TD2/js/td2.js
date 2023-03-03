@@ -17,11 +17,30 @@ console.log( message);
 
 function onLoad() {
 	console.log( 'Processus de chargement du document terminé…');
-	//
-	// All your JavaScript code goes here !
-	//
-
+	initSelect();
 }
 
 // Toute les ressources de la page sont complètement chargées.
 window.onload = onLoad;
+
+
+
+function initSelect() {
+	const root = document.documentElement;
+	root.addEventListener('click', function(event) {
+		if (event.target instanceof HTMLElement) {
+			select(event.target);
+		}
+	});
+}
+
+function select(element) {
+	if (element.className === 'selection') {
+		element.className = '';
+		element.style.backgroundColor = 'white';
+	}
+	else {
+		element.className = 'selection';
+		element.style.backgroundColor = 'skyblue';
+	}
+}

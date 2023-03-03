@@ -4,6 +4,7 @@
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
+	color: black;
 }
 
 body {
@@ -28,7 +29,6 @@ nav li {
 }
 
 #balisesh2 {
-	background-color: #f1f1f1;
 	padding: 10px;
 }
 
@@ -43,4 +43,9 @@ span {
 
 p {
 	padding-top: 10px;
+}
+
+.selection {
+	background-color: deepskyblue;
+	color: black;
 }
