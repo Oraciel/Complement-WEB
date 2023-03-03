@@ -5,3 +5,42 @@
 	padding: 0px;
 	box-sizing: border-box;
 }
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	color: #333;
+}
+
+a {
+	text-decoration: none;
+}
+
+nav ul{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav li {
+	list-style: none;
+	background-color: aquamarine;
+}
+
+#balisesh2 {
+	background-color: #f1f1f1;
+	padding: 10px;
+}
+
+#red {
+	background-color: red;
+}
+
+span {
+	color: red;
+	font-weight: bold;
+}
+
+p {
+	padding-top: 10px;
+}
