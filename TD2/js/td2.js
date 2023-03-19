@@ -17,7 +17,8 @@ console.log( message);
 
 function onLoad() {
 	console.log( 'Processus de chargement du document terminé…');
-	initSelect();
+	//initSelect();
+	select2();
 }
 
 // Toute les ressources de la page sont complètement chargées.
@@ -41,6 +42,19 @@ function select(element) {
 	}
 	else {
 		element.className = 'selection';
-		element.style.backgroundColor = 'skyblue';
+		element.style.backgroundColor = 'yellowgreen';
+	}
+}
+function select2() {
+	var elements = document.querySelectorAll("body *:not(#insert-div, #insert-div *)");
+	for (let i = 0; i < elements.length; i++) {
+		elements[i].style.backgroundColor = "blue";
+		elements[i].addEventListener("click", function() {
+			if (this.style.backgroundColor == "blue") {
+				this.style.backgroundColor = "";
+			} else {
+				this.style.backgroundColor = "blue";
+			}
+		});
 	}
 }
