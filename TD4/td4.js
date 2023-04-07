@@ -5,7 +5,21 @@ const personne = {
     prenom: "Vincent",
     age: 20,
     taille: 185,
-};
+    qui : function () {
+        console.log("Je suis " + this.prenom + " " + this.nom);
+    },
+    quiMaj : function (){
+        console.log("Je suis " + this.prenom.toUpperCase() + " " + this.nom.toUpperCase())
+    },
+    age: function() {
+        const today = new Date();
+        const birthDate = new Date(this.datenaissance);
+        let age = today.getFullYear() - birthDate.getFullYear();
+        //J'ommet les jours et les mois, je ne considère que les années.
+        return age;
+    }
+}
+;
 
 //b
 const personne1 = {};
@@ -54,3 +68,46 @@ personne.sports = {
 console.log(personne.sports.sport1); // notation avec un point
 console.log(personne["sports"]["sport2"]); // notation entre crochets
 console.log(personne.sports["sport3"]); // combinaison des deux notations
+
+//c
+for (let sport in personne.sports) {
+    console.log(`${sport} : ${personne.sports[sport]}`);
+}
+
+//d
+personne.sports = [
+    { nom: "Tennis", equipements: ["raquette", "balle", "filet"] },
+    { nom: "Football", equipements: ["ballon", "crampons", "but"] },
+    { nom: "Basketball", equipements: ["ballon", "panier"] }
+];
+
+for (let i in personne.sports) {
+    console.log(personne.sports[i].nom);
+    for (let j in personne.sports[i].equipements) {
+        console.log(personne.sports[i].equipements[j]);
+    }
+}
+
+
+//1.4
+//a
+personne.qui();
+//b
+personne.quiMaj();
+
+//1.5
+//a
+const div = document.createElement("div");
+div.textContent = Object.values(personne).join(", ");
+document.body.appendChild(div);
+
+//b
+console.log(JSON.stringify(personne));
+
+//c
+personne.datenaissance = new Date(1993, 4, 15);
+console.log(JSON.stringify(personne));
+
+//d
+console.log(JSON.stringify(personne));
+//Je n'ai pas eu d'erreur ?
