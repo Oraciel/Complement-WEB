@@ -111,3 +111,105 @@ console.log(JSON.stringify(personne));
 //d
 console.log(JSON.stringify(personne));
 //Je n'ai pas eu d'erreur ?
+
+//2.1
+//a,b
+Object.defineProperty(personne, "lang", {
+    get: function() {
+        return this._lang;
+    },
+    set: function (value){
+        this._lang = value;
+    }
+});
+
+//c
+//Les deux champs sont sensiblement identique, la seul différence étant la syntaxe.
+// get fullName() sera généralement plus facile à lire et à comprendre.
+
+//d
+const obj = {counter : 0};
+
+Object.defineProperty(obj, "reset", {
+    get: function() {
+        this.counter = 0;
+    }
+});
+
+Object.defineProperty(obj, "inc", {
+    get: function() {
+        this.counter++;
+    }
+});
+
+Object.defineProperty(obj, "dec", {
+    get: function() {
+        this.counter--;
+    }
+});
+
+Object.defineProperty(obj, "add", {
+    set: function(value) {
+        this.counter += value;
+    }
+});
+
+Object.defineProperty(obj, "sub", {
+    set: function(value) {
+        this.counter -= value;
+    }
+});
+
+//2.2
+//a
+function Personne(nom, prenom, age, couleurYeux) {
+    this.nom = nom;
+    this.prenom = prenom;
+    this.age = age;
+    this.couleurYeux = couleurYeux;
+}
+
+//b
+let pere = new Personne("Dacheville", "Vincent", 20, "bleu");
+let mere = new Personne("Dacheville", "Marie", 20, "marron");
+
+//c
+Personne.prototype.name = function () {
+    console.log(this.prenom + " " + this.nom);
+}
+
+//d
+Personne.prototype.setNom = function (nom) {
+    this.nom = nom;
+}
+
+//e
+let x1 = "Hello";
+console.log(typeof x1); // "string"
+console.log(x1.length); // 5
+
+let x2 = 123;
+console.log(typeof x2); // "number"
+console.log(x2.toString()); // "123"
+
+let x3 = true;
+console.log(typeof x3); // "boolean"
+console.log(x3.valueOf()); // true
+
+let x4 = {};
+console.log(typeof x4); // "object"
+console.log(Object.keys(x4)); // []
+
+let x5 = [];
+console.log(typeof x5); // "object"
+console.log(x5.length); // 0
+
+//f
+console.log(Math.PI); // Affiche la valeur de Pi (arrondie à 15 chiffres après la virgule, on à pas tout les chiffres...)
+console.log(Math.floor(2.7)); // Affiche 2, le plus grand entier inférieur ou égal à 2.7
+console.log(Math.random()); // Affiche un nombre aléatoire entre 0 et 1
+console.log(Math.pow(2, 3)); // Affiche 8, la puissance de 2 à la puissance 3
+console.log(Math.sqrt(9)); // Affiche 3, la racine carrée de 9
+
+//3.1
+//a
