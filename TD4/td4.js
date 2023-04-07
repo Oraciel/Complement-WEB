@@ -211,5 +211,98 @@ console.log(Math.random()); // Affiche un nombre aléatoire entre 0 et 1
 console.log(Math.pow(2, 3)); // Affiche 8, la puissance de 2 à la puissance 3
 console.log(Math.sqrt(9)); // Affiche 3, la racine carrée de 9
 
+//3
+//a
+Personne.prototype.nationalite = "française";
+
+//b
+Personne.prototype.name = function() {
+    console.log(+ this.nom + " " + this.prenom);
+};
+
 //3.1
 //a
+function Personne(nom, prenom) {
+    this.nom = nom;
+    this.prenom = prenom;
+    this.estomac = [];
+}
+
+//b
+Personne.prototype.manger = function(nourriture) {
+    if (this.estomac.length >= 10) {
+        console.log("Trop de nourriture dans l'estomac !");
+    } else {
+        this.estomac.push(nourriture);
+        console.log("Je mange " + nourriture);
+    }
+};
+
+//c
+Personne.prototype.digestionOK = function() {
+    this.estomac = [];
+};
+
+//d
+Personne.prototype.name = function() {
+    console.log(this.nom + " " + this.prenom);
+};
+
+//tests
+let p1 = new Personne("Dacheville", "Vincent");
+p1.manger("pomme");
+p1.manger("banane");
+p1.manger("poire");
+p1.manger("orange");
+console.log(p1.estomac);
+p1.digestionOK();
+console.log(p1.estomac);
+p1.name();
+
+//3.2
+//a
+function Car(modele, conso100km) {
+    this.modele = modele;
+    this.conso100km = conso100km;
+    this.reservoirlitre = 0;
+    this.compteurkm = 0;
+}
+
+//b
+Car.prototype.addfuel = function(nblt) {
+    this.reservoirlitre += nblt;
+}
+
+//c
+Car.prototype.drive = function(nbkm) {
+    const conso = this.conso100km / 100 * nbkm;
+    if (conso <= this.reservoirlitre) {
+        this.reservoirlitre -= conso;
+        this.compteurkm += nbkm;
+    } else {
+        const distanceRestante = this.reservoirlitre / this.conso100km * 100;
+        console.log("Je serai à cours de carburant dans " + distanceRestante  + "km");
+        this.reservoirlitre = 0;
+        this.compteurkm += distanceRestante;
+    }
+}
+
+//3.3
+//a,b
+function Baby(nom, prenom, jouetFavori){
+    Personne.call(this, nom, prenom);
+    this.jouetFavori = jouetFavori;
+}
+Baby.prototype = Object.create(Personne.prototype);
+Baby.prototype.constructor = Baby;
+
+//c
+Baby.prototype.jouer = function() {
+    return "Je joue avec mon jouet favori " + this.jouetFavori;
+};
+
+//tests
+let b1 = new Baby("Dacheville", "Vincent", "voiture");
+b1.name();
+b1.manger("pomme");
+console.log(b1.jouer());
