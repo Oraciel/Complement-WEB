@@ -1,0 +1,11 @@
+.error-message {
+    color: red;
+}
+
+.success-message {
+    color: green;
+}
+
+.error-border {
+    border-color: red;
+}
